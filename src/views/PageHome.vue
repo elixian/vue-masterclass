@@ -1,23 +1,17 @@
 <script setup lang="ts">
-import SourceData from "@/datasource/datasource";
 
-const threads = SourceData.threads;
-const posts = SourceData.posts;
-const users = SourceData.users;
-console.log(threads)
-function getPostById(id) {
-  return posts.find((p) => p.id === id);
-}
+import ThreadList from "@/components/ThreadList.vue";
 
-function getUserById(id: string) {
-  return users.find((u) => u.id === id);
-}
+
 </script>
 
 <template>
   <main>
     <div class="container">
-      <div
+      <h1>Welcome to the Forum</h1>
+
+      <ThreadList />
+      <!-- <div
         class="col-large push-top"
         v-for="thread in threads"
         :key="thread.id"
@@ -55,13 +49,11 @@ function getUserById(id: string) {
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </main>
 </template>
 
 
 <style scoped>
-
-
 </style>
