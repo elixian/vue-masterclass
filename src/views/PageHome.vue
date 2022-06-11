@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
 import ThreadList from "@/components/ThreadList.vue";
-
-
+import SourceData from "@/datasource/datasource";
+const threads = SourceData.threads;
 </script>
 
 <template>
@@ -10,7 +10,7 @@ import ThreadList from "@/components/ThreadList.vue";
     <div class="container">
       <h1>Welcome to the Forum</h1>
 
-      <ThreadList />
+      <ThreadList :threads="threads"/>
       <!-- <div
         class="col-large push-top"
         v-for="thread in threads"
