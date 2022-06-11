@@ -2,13 +2,18 @@
     <div class="col-full">
         <div class="thread">
             <h2 class="list-title">liste of threads</h2>
-            <div v-for="thread in threads" :key="thread.id" class="thread">
+            <div v-for="thread in threads" :key="thread.id" class="thread bg-white odd:bg-gray-100">
                 <div>
                     <p><a href="#">{{ thread.title }}</a></p>
                     <p class="text-fade text-xsmall">
                         by <a href="">{{getUserById(thread.userId)?.username}}</a>, {{thread.publishedAt}}
                     </p>
                 </div>
+                <div class="activity">
+                    <p class="replies-count">
+                            {{thread.posts.length}} replies
+                    </p>
+                </div>    
             </div>
         </div>
 
